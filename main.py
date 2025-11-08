@@ -4,9 +4,9 @@ import subprocess
 
 app = Flask(__name__)
 
-PROJECT = "TON_PROJECT_ID"
-ZONE = "TA_ZONE_VM"
-INSTANCE = "NOM_VM"
+PROJECT = "supple-coral-476916-c8"
+ZONE = "supple-coral-476916-c8"
+INSTANCE = "instance-20251102-164456"
 
 @app.route("/", methods=["POST"])
 def run_bot():
