@@ -5,7 +5,7 @@ import subprocess
 app = Flask(__name__)
 
 PROJECT = "supple-coral-476916-c8"
-ZONE = "supple-coral-476916-c8"
+ZONE = "us-west1-c"
 INSTANCE = "instance-20251102-164456"
 
 @app.route("/", methods=["POST"])
