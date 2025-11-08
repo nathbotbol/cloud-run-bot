@@ -29,6 +29,14 @@ def run_bot():
         "--command", "bash ~/bot-cycling/scripts/run_bot.sh"
     ], check=True)
 
+    subprocess.run([
+        "gcloud", "compute", "ssh",
+        f"nathan@{INSTANCE}",
+        "--zone", ZONE,
+        "--project", PROJECT,
+        "--command", f"BASE_URL='{os.environ['BASE_URL']}' USERNAME='{os.environ['USERNAME']}' PASSWORD='{os.environ['PASSWORD']}' TARGET_START='{os.environ['TARGET_START']}' TARGET_END='{os.environ['TARGET_END']}' TARGET_SUBJECT='{os.environ['TARGET_SUBJECT']}' TARGET_COACH='{os.environ['TARGET_COACH']}' PEOPLE='{os.environ['PEOPLE']}' bash ~/bot-cycling/scripts/run_bot.sh"
+    ])
+
     # 4. Éteindre la VM
     subprocess.run([
         "gcloud", "compute", "instances", "stop",
