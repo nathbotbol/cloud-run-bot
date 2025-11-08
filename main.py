@@ -21,13 +21,6 @@ def run_bot():
     time.sleep(90)  # Ajuste si nécessaire
 
     # 3. Exécuter le script sur la VM
-    subprocess.run([
-        "gcloud", "compute", "ssh",
-        f"nathan@{INSTANCE}",
-        "--zone", ZONE,
-        "--project", PROJECT,
-        "--command", "bash ~/bot-cycling/scripts/run_bot.sh"
-    ], check=True)
 
     subprocess.run([
         "gcloud", "compute", "ssh",
