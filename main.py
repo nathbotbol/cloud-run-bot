@@ -19,7 +19,7 @@ def run_bot():
     ], check=True)
 
     # 2. on laisse la VM booter + exécuter son startup script
-    time.sleep(240)
+    time.sleep(300)
 
     # 3. (NE SURTOUT PAS SSH)
     # ton run_bot.sh fera shutdown lui même
